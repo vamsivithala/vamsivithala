@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            body{
+                font-size: x-large;
+                font-family: system-ui;
+            }
+        </style>
+        <div style="display: flex; justify-content: center; height: 100vh;align-items: center;">
+            <body bgcolor="black">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+                
+            </head>
+            <form id="loginForm">
+                <label for="username" style="color: white;">Username:</label>
+                <input type="text" id="username">
+                <br><br>
+                <label for="password" style="color: white;">Password:</label>
+                <input type="password" id="password">
+                <br><br>
+                <div div style="display: flex; justify-content: center;align-items: center;">
+                    <button type="submit">Submit</button>
+                </div>
+                
+            </form>
+            <script>
+                const form = document.getElementById("loginForm");
+                const username = document.getElementById("username");
+                const password = document.getElementById("password");
+
+                const validCredentials = {
+                    "vamsi1": "sai1",
+                    "vamsi2": "sai2"
+                };
+
+                form.addEventListener("submit", function(event) {
+                event.preventDefault();
+  
+                if (!username.value || !password.value) {
+                    alert("Please enter both username and password.");
+                    return;
+                }
+                if (validCredentials[username.value] === password.value) {
+                    alert("Login successful!");
+                }
+                else {
+                    alert("Incorrect username or password.");
+                }
+               
+            });
+            </script>
+            
+        </body>
+        </div>
+    </head>
+</html>
